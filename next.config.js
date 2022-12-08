@@ -1,7 +1,11 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
+
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+  basePath:
+    process.env.NODE_ENV === "production" ? "/nextjs-markdown-blog" : "",
+  trailingSlash: true, // To make routes work when opened directly (e.g. after page refresh)
 }
 
 module.exports = nextConfig
